@@ -1,0 +1,46 @@
+html {
+  background-image: url("../images/background.jpg");
+  color: white;
+  font-family: 'Roboto';font-size: 14px;   
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+#wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+}
+#articles {
+  display: inline-block;
+  overflow: auto;
+  width: 60%;
+  height: 700px;
+}
+#notes {
+  float: right;
+  width: 30%;
+}
+.link {
+  text-decoration: none;
+  font-size: 18px;
+  width: 70px;
+}
+.title {
+  font-size: 22px;
+  font-style: bold;
+}
+textarea,
+input {
+  display: block;
+  width: 100%;
+
+}
+input {
+  height: 36px;
+  font-size: 24px;
+}
+textarea {
+  height: 200px;
+  font-size: 18px;
+}
