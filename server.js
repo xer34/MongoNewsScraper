@@ -17,10 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 //------------------------
-mongoose.connect(
-  "mongodb://localhost/warhammer",
-  { useNewUrlParser: true }
-);
+// mongoose.connect(
+//   "mongodb://localhost/warhammer",
+//   { useNewUrlParser: true }
+// );
 // Routes
 app.get("/scrape", (req, res) => {
   axios.get("https://spikeybits.com/category/warhammer-40k").then(response => {
