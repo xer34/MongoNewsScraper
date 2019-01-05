@@ -1,7 +1,7 @@
 # MongoNewsScraper
 
-# All the News That's Fit to Scrape
+# Hide yo kids, Hide yo wife, they scrapin' eeryone out here.
 
 ### Overview
 
-In this assignment, you'll create a web app that lets users view and leave comments on the latest news. But you're not going to actually write any articles; instead, you'll flex your Mongoose and Cheerio muscles to scrape news from another site.
+Basic HTML scraper using Mongo, Axios and Cheerio. 
