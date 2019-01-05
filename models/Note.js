@@ -1,8 +1,8 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
-var NoteSchema = new Schema({
-  title: String,
-  body: String
-});
-var Note = mongoose.model("Note", NoteSchema);
+const mongoose = require("mongoose"),
+  Schema = mongoose.Schema,
+  NoteSchema = new Schema({
+    title: String,
+    body: String
+  });
+const Note = mongoose.model("Note", NoteSchema);
 module.exports = Note;
