@@ -9,13 +9,14 @@ $.getJSON("/articles", function(data) {
         "<p>" +
         data[i].summary +
         "</p>" + 
-        "<input type='button' class='link' value='Link' onclick='window.location.href='" +
-        data[i].link + 
-        "/><br/>" +
+        "<a href='" +
+        data[i].link + "' class='w3-button w3-red'>Link<" +
+        "/a><br/>" +
         "<p>----------------------------------</p>"
     );
   }
 });
+
 $(document).on("click", "p", function() {
   $("#notes").empty();
   var thisId = $(this).attr("data-id");
@@ -36,6 +37,7 @@ $(document).on("click", "p", function() {
     }
   });
 });
+
 $(document).on("click", "#savenote", function() {
   var thisId = $(this).attr("data-id");
   $.ajax({

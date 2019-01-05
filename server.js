@@ -7,6 +7,11 @@ const express = require("express"),
   app = express(),
   PORT = 3000;
 //------------------------
+  // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/warhammer";
+
+mongoose.connect(MONGODB_URI);
+//------------------------
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -37,12 +42,13 @@ app.get("/scrape", (req, res) => {
         .catch(err => {
           return res.json(err);
         });
+        console.log(result.link)
     });
 
     // var a = $('.entry-title').find('a').text()
     // console.log(a)
 
-    res.send("Scrape Complete");
+    res.send("You gonna get scraped");
   });
 });
 //------------------------
@@ -73,3 +79,5 @@ app.post("/articles/:id", (req, res) => {
 });
 //------------------------
 app.listen(PORT, () => console.log("App running on port " + PORT + "!"));
+
+
