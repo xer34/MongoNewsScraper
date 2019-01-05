@@ -2,7 +2,8 @@ const express = require("express"),
   logger = require("morgan"),
   mongoose = require("mongoose"),
   app = express(),
-  PORT = 3000;
+  PORT = process.env.PORT || 3000
+  
 require("./routes/htmlRoutes")(app);
 //------------------------
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
