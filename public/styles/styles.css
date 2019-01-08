@@ -14,12 +14,15 @@ html {
 #articles {
   display: inline-block;
   overflow: auto;
-  width: 60%;
+  width: 50%;
   height: 700px;
 }
 #notes {
-  float: right;
-  width: 30%;
+position: absolute;
+right: 10%;
+top: 20%;
+width: 25%;
+
 }
 .link {
   text-decoration: none;

@@ -1,19 +1,23 @@
 $.getJSON("/articles", data => {
   for (let i = 0; i < data.length; i++) {
     $("#articles").append(
-      `<p class='title' data-id='${data[i]._id}'>${data[i].title}<br /><br><p>${data[i].summary}</p><a href='${data[i].link}' class='w3-button w3-red'>Link</a><br/><p>----------------------------------</p>`
+      `<p class='title' data-id='${data[i]._id}'>${data[i].title}<br />
+      <br>
+      <p>${data[i].summary}</p>
+      <a href='${data[i].link}' class='w3-button w3-red'>Link</a>
+      <button class='w3-button w3-blue noteButton' data-id='${data[i]._id}'>Note</button>
+      <br/>
+      <p>----------------------------------</p>`
     );
   }
 });
-
-$(document).on("click", "p", function() {
+$(document).on("click", ".noteButton", function() {
   $("#notes").empty();
   const thisId = $(this).attr("data-id");
   $.ajax({
     method: "GET",
     url: `/articles/${thisId}`
   }).then(data => {
-    console.log(data);
     $("#notes").append(`<h2>${data.title}</h2>`);
     $("#notes").append("<input id='titleinput' name='title' >");
     $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
@@ -26,20 +30,20 @@ $(document).on("click", "p", function() {
     }
   });
 });
-
 $(document).on("click", "#savenote", function() {
-  const thisId = $(this).attr("data-id");
+   var thisId = $(this).attr("data-id");
   $.ajax({
     method: "POST",
-    url: `/articles/${thisId}`,
+    url: "/articles/" + thisId,
     data: {
       title: $("#titleinput").val(),
       body: $("#bodyinput").val()
     }
-  }).then(data => {
-    console.log(data);
-    $("#notes").empty();
-  });
+  })
+  .then(function(data) {
+      console.log(data);
+      $("#notes").empty();
+    });
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
