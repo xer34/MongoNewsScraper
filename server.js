@@ -8,12 +8,7 @@ require("./routes/htmlRoutes")(app);
 //------------------------
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 
-
-const MONGODB_URI =
-  "mongodb://user2:user2password@ds249824.mlab.com:49824/mongoscraper";
-  
-  
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://user2:user2password@ds249824.mlab.com:49824/mongoscraper")
 
 // process.env.MONGODB_URI || "mongodb://localhost/warhammer" ;
 //------------------------
