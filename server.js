@@ -8,10 +8,10 @@ require("./routes/htmlRoutes")(app);
 //------------------------
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 
-// mongoose.connect(MONGODB_URI);
-// const MONGODB_URI =
-//   "mongodb://user2:user2password@ds249824.mlab.com:49824/mongoscraper";
-// process.env.MONGODB_URI || "mongodb://localhost/warhammer" ;
+mongoose.connect(MONGODB_URI);
+const MONGODB_URI =
+  "mongodb://user2:user2password@ds249824.mlab.com:49824/mongoscraper";
+process.env.MONGODB_URI || "mongodb://localhost/warhammer" ;
 //------------------------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,9 +19,9 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 //------------------------
-mongoose.connect(
-  "mongodb://localhost/warhammer",
-  { useNewUrlParser: true }
-);
+// mongoose.connect(
+//   "mongodb://localhost/warhammer",
+//   { useNewUrlParser: true }
+// );
 //------------------------
 app.listen(PORT, () => console.log(`App running on port ${PORT}!`));
