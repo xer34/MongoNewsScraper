@@ -14,7 +14,7 @@ const MONGODB_URI =
   "mongodb://user2:user2password@ds249824.mlab.com:49824/mongoscraper";
   
 process.env.MONGODB_URI 
-// || "mongodb://localhost/warhammer" ;
+
 //------------------------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
