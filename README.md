@@ -1,7 +1,7 @@
 # MongoNewsScraper
 
-# Hide yo kids, Hide yo wife, they scrapin' eeryone out here.
+Basic HTML scraper using Mongo, Axios and Cheerio inside of a Node Express server.
 
-### Overview
+See Deployed here: https://evening-beyond-27081.herokuapp.com/
 
-Basic HTML scraper using Mongo, Axios and Cheerio. 
+See under the hood here: https://github.com/xer34/MongoNewsScraper
